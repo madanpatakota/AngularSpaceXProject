@@ -12,6 +12,11 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+    "experimentalDecorators":false
     }
+    
 ]
+
 }

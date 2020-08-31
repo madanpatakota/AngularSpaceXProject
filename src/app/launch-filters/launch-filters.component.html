@@ -1,0 +1,42 @@
+<div class="bg-white box">
+    <div class="text-left filter">
+        <h6>Filters</h6>
+    </div>
+    <div class="SectionGroup">
+        <div class="text-center">Launch Year</div>
+        <hr>
+        <div>
+            <span class="btnGroup" *ngFor="let Year of YearsList">
+                <button class="btn"
+                    [ngStyle]="{'background-color' : Year.IsSelected === true ? '#28a745' : 'lightgreen'}"
+                    (click)="SelectedFilters.Year=Year.Value;evtFilter(YearsList,Year)" #year>
+                    {{Year.Value}}</button>
+            </span>
+        </div>
+    </div>
+    <div class="SectionGroup">
+        <div class="text-center">Successful Launch</div>
+        <hr>
+        <div>
+            <span *ngFor="let Launch of SuccessFulLaunch" class="btnGroup">
+                <button class="btn"
+                    [ngStyle]="{'background-color' : Launch.IsSelected === true ? '#28a745' : 'lightgreen'}"
+                    (click)="SelectedFilters['sLaunch'] = Launch.Value ;evtFilter(SuccessFulLaunch,Launch)" #sLaunch>
+                    {{Launch.Value}}</button>
+            </span>
+        </div>
+    </div>
+    <div class="SectionGroup">
+        <div class="text-center">Successful Landing</div>
+        <hr>
+        <div>
+            <span *ngFor="let Landing of SuccessFulLanding" class="btnGroup">
+                <button class="btn"
+                    [ngStyle]="{'background-color' : Landing.IsSelected === true ? '#28a745' : 'lightgreen'}"
+                    (click)="SelectedFilters['sLanding'] = Landing.Value;evtFilter(SuccessFulLanding,Landing)"
+                    #sLanding>
+                    {{Landing.Value}}</button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card-data">
+    <div class="card align-items-center" style="width: 15rem;" *ngFor="let Program of Programs">
+        <div class="machineImage">
+            <img class="card-img-top"  style="width:70%" [src]="Program.mission_patch_small" alt="Card image">
+        </div>
+        <div class="card-body">
+            <div class="card-text"><span class="text-info font-weight-bold">{{Program.mission_name}} #
+                    {{Program.flight_number}}</span></div>
+            <div class="card-text">Misson Ids : <span class="card-text" *ngFor="let missionID of Program.mission_ids">
+                    {{missionID}}</span>
+            </div>
+              <div class="card-text">Launch Year : {{Program.launch_year}}</div>
+            <div class="card-text">Successful Launch : {{Program.launch_success}}</div>
+            <div class="card-text">Successful Landing : {{Program.land_success}}</div>
+        </div>
+    </div>
+</div>
+<div *ngIf="noDataAvailble">
+    <div class="card-container cardNodata">
+        <h2> No data available</h2>
+    </div>
+</div>
+<div [hidden]="spinner" class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
